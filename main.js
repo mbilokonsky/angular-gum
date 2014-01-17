@@ -5,7 +5,7 @@ angular.module("myk.camera", [])
             videoElement: null,
             stream: null,
             streamUrl: null,
-            isReady = false,
+            isReady: false,
             register: function(callback) {
                 if (isReady) {
                     return callback();
@@ -37,8 +37,8 @@ angular.module("myk.camera", [])
 
             videoElement.src = camera.streamUrl;
 
+            camera.isReady = true;
             listeners.forEach(function(callback) {
-                isReady = true;
                 callback(camera.videoElement);
             });
 
