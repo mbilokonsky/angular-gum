@@ -1,10 +1,16 @@
-angular.module("myk.camera")
+angular.module("myk.camera", [])
 .service("Camera", function() {
         var listeners = [];
         var camera = {
             videoElement: null,
             stream: null,
+            streamUrl: null,
+            isReady = false,
             register: function(callback) {
+                if (isReady) {
+                    return callback();
+                }
+
                 listeners.push(callback);
             }
         }
@@ -32,8 +38,11 @@ angular.module("myk.camera")
             videoElement.src = camera.streamUrl;
 
             listeners.forEach(function(callback) {
+                isReady = true;
                 callback(camera.videoElement);
             });
+
+            listeners = [];
 
         }, function(err) {
 
