@@ -1,0 +1,25 @@
+{
+  "name": "AngularCamera",
+  "version": "0.2.0",
+  "homepage": "https://github.com/mbilokonsky/AngularCamera",
+  "authors": [
+    "mykola <mbilokonsky@gmail.com>"
+  ],
+  "description": "A wrapper for getUserMedia, which exposes a Camera object as an angular service. Camera includes a the  stream object, a local URL for that stream, and a video element",
+  "main": "main.js",
+  "keywords": [
+    "angular",
+    "getUserMedia",
+    "camera",
+    "video",
+    "audio"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
