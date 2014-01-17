@@ -7,7 +7,7 @@ angular.module("myk.camera", [])
             streamUrl: null,
             isReady: false,
             register: function(callback) {
-                if (isReady) {
+                if (camera.isReady) {
                     return callback();
                 }
 
@@ -45,7 +45,7 @@ angular.module("myk.camera", [])
             listeners = [];
 
         }, function(err) {
-
+            console.error(err);
         });
 
         return camera;
